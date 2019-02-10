@@ -10,7 +10,8 @@ class ActorAccessory extends Accessory {
     this.actorService = new ServiceType(this.name);
     this.actorService.getCharacteristic(CharacteristicType)
                      .on('set', this.setState.bind(this))
-                     .on('get', this.getState.bind(this));
+                     .on('get', this.getState.bind(this))
+                     .on('get', this.getCurrentValue.bind(this));
 
     this.services.push(this.actorService);
   }
